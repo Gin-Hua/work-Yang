@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background: #21a1f1;
+}
+
+/* 商品主要内容 */
+main {
+    flex: auto;
+    overflow-y: scroll;
+    margin-left: 5%;
+    width: 90%;
+    height:100%;
+}
+/* 每一个项目 */
+.item {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background: #fff;
+}
+/* 商品图片盒子 */
+.imgBox {
+    width: 40%;
+    height: 100%;
+}
+/* 商品图片 */
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 商品介绍 */
+.item-desc {
+    padding: 10px 10px;
+    width: 60%;
+    height: 100%;
+}
+/* 商品题目 */
+.title {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+
+/* 商品详情 */
+.title-desc {
+    margin-top: 10px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    /* 文本溢出 */
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+/* 价格 */
+.money {
+    display: flex; 
+    margin-top: 10px;
+    height: 60px;
+    line-height: 60px;
+}
+/* 现价 */
+.now-price {
+    width: 50%;
+    height: 100%;
+    color: red;
+}
+.now-price span {
+    font-size: 24px;
+    font-weight: bold;
+}
+/* 原价 */
+.price {
+    width: 50%;
+    height: 100%;
+}
+.price span {
+    text-decoration: line-through;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    widows: 100%;
+    height: 50px;
+}
+footer>div {
+    width: 49.9%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background: #21a1f1;
+}

@@ -1,0 +1,69 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background: #21a1f1;
+}
+
+main {
+    flex: 1;
+    overflow-y: scroll;
+    margin-left: 5%;
+    width: 90%;
+    height: 100%;
+}
+
+/* 商品 */
+.item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+/* 图片 */
+img {
+    width: 100%;
+    height: 200px;
+}
+/* 商品名字 */
+
+
+/* 商品详情 */
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+}
+footer>.delBtn {
+    margin-bottom: 20px;
+    margin-left: 10%;
+    width:  80%;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 25px;
+    color: #fff;
+    background: #21a1f1;
+}
+
+
+
+
+
+
+
+
+
