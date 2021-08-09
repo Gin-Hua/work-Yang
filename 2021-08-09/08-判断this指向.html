@@ -1,0 +1,91 @@
+<script>
+
+    // 父类
+    function Mom() {
+        this.money = 20;
+        this.arr = [];
+        this.show = function () {
+            console.log(this.money, this.arr);
+        }
+    }
+
+    // 子类
+    function Child() {
+        this.money = 10;
+        this.change = function () {
+            this.arr.push(this.money--)
+            // 先运算，再自减
+        }
+    }
+
+
+
+    // 原型链继承
+    Child.prototype = new Mom()
+
+
+
+
+    const mom = new Mom();
+    // 20   []
+    const child1 = new Child();
+    // 10 fn
+    const child2 = new Child();
+    // 10 fn
+
+    // console.log(child1.arr);
+    // 10 fn
+
+
+
+
+    child1.money = 5
+    // // 5  fn
+    child2.money = 6
+    // 6  fn
+    console.log(child1);
+    console.log(child2);
+
+    mom.show() // 输出什么              // 20 . []
+    // show中的this就是实例化对象自己的值
+    // console.log(child1);
+
+    child1.show() // 输出什么            5  []
+    /*   show中的this,谁调用指向谁，Child实例化对象中有money这个值，故就是child1的值，
+      因为没有执行change操作，故值不变，就是原值，因为 Child.prototype = new Mom()，相当于child中有一个 arr =[]
+      但是this.arr在实例化对象中找不到，就按照原型链往上查找，发现Mom中有arr，为空，故就是这个值 */
+    child1.change()
+    // this就是指child1自己的money，5，将money的值-1；并且像arr中添加一个元素[5]     money = 4     arr =  [5]
+
+    mom.show() // 输出什么           // 20，[]
+    // 虽然在child1中改变了arr的值，但是mom.show中的this是Mom实例化对象的值，所以还是   20   []
+
+    child1.show() // 输出什么       //4   [5]
+    // 前面child1执行了change操作，改变了money的值和arr的值
+
+
+
+
+    child2.show() // 输出什么               // 6  []
+    // 错误   暂未理解到 为什么arr的值用的是child1中的arr  6   [5]，
+
+    // 错误
+    /* show中的this.show中的this,谁调用指向谁，
+    this.money就是实例化对象child2中的money值，
+    this.arr在实例化对象child2中没有arr的值，即按照原型链往上查找，用Mom中的arr */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

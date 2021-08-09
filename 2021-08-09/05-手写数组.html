@@ -1,0 +1,87 @@
+<script>
+    let arr = [6, 1, 4, 2, 0, 5, 8, 7, 9]
+    // 添加数组原型方法
+
+    // 返回数组中的最小值
+    Array.prototype.getMin = function () {
+        // console.log(this);
+        let min = this[0];
+        for (let i = 0; i < this.length; i++) {
+            if (min > this[i]) {
+                min = this[i]
+            }
+        }
+        return min;
+    }
+
+    console.log(arr.getMin());
+
+    // 返回数组中的最大值
+    Array.prototype.getMax = function () {
+        // console.log(this);
+        let max = this[0];
+        for (let i = 0; i < this.length; i++) {
+            if (max < this[i]) {
+                max = this[i]
+            }
+        }
+        return max;
+    }
+
+    console.log(arr.getMax());
+
+
+    // 手写排序
+    let arr1 = [6, 1, 4, 3, 2, 0, 5, 8, 7, 9]
+    // 从小到大
+    Array.prototype.getRankSTB = function () {
+        // console.log(this);
+        let temp;
+        for (let i = 0; i < this.length; i++) {
+            for (let j = i + 1; j < this.length; j++) {
+                if (this[i] > this[j]) {
+                    temp = this[j];
+                    this[j] = this[i];
+                    this[i] = temp;
+                }
+            }
+        }
+        return this;
+    }
+    console.log(arr1.getRankSTB());
+
+
+    let arr2 = [6, 1, 4, 2, 0, 5, 8, 7, 9]
+    // 从大到小
+    Array.prototype.getRankBTS = function () {
+        // console.log(this);
+        let temp;
+        for (let i = 0; i < this.length; i++) {
+            for (let j = i + 1; j < this.length; j++) {
+                if (this[i] < this[j]) {
+                    temp = this[j];
+                    this[j] = this[i];
+                    this[i] = temp;
+                }
+            }
+        }
+        return this;
+    }
+    console.log(arr2.getRankBTS());
+
+
+
+    let arr3 = [6, 1, 4, 2, 0, 5, 8, 7, 9]
+    // indexOf 
+    Array.prototype.getIndexOf = function (num) {
+        for (let i = 0; i < this.length; i++) {
+            if (num == this[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    console.log(arr3.getIndexOf(4));
+
+
+</script>

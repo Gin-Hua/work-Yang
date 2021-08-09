@@ -1,0 +1,20 @@
+<script>
+    var a = 100
+    var b = 200
+    var arr = [2, 2, 2]
+
+    var newArr = arr.map(function (item, index) {
+        var a = 300
+
+        if (item === index + 1) { return item }
+        if (item === index) { return b }
+        return a
+    })
+
+    window.setTimeout(function () {
+        console.log(++b)
+    }, 0)       // 201
+
+    console.log(newArr)         // [300,2,200]
+
+</script>

@@ -1,0 +1,24 @@
+<script>
+    // 定义函数
+    function Electric(type, color, price) {
+        this.name = name;
+        this.color = color;
+        this.price = price;
+
+    }
+    // 将方法挂载到原型上
+    Electric.prototype.using = function (using) {
+        return using
+    }
+    // 实例化对象
+    // 电视
+    let tv = new Electric("电视", "黑色", 1900);
+    console.log(tv);
+    // 调用对象的方法
+    console.log(tv.using("放节目..."));
+
+    // 冰箱
+    let fridge = new Electric("冰箱", "银色", 2000);
+    console.log(fridge);
+    console.log(fridge.using("储存食物..."));
+</script>

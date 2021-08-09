@@ -1,0 +1,45 @@
+<style>
+    .active {
+        color: pink;
+    }
+</style>
+
+<ul>
+    <li>菜单1</li>
+    <li>菜单2</li>
+    <li>菜单3</li>
+    <li>菜单4</li>
+    <li>菜单5</li>
+    <li>菜单6</li>
+</ul>
+
+<script>
+
+    // ES5闭包---解决 事件监听问题
+    var liDom = document.querySelectorAll("li");
+    for (var i = 0; i < liDom.length; i++) {
+        ; (function (i) {
+            liDom[i].addEventListener("click", function () {
+                // 循环清空样式
+                for (var x = 0; x < liDom.length; x++) {
+                    liDom[x].className = "";
+                }
+                console.log(i);
+                liDom[i].className = "active";
+            })
+        })(i)
+    }
+
+
+
+    // ES6  没有事件监听的问题
+    /*     let listDom = document.querySelectorAll("li");
+        for (let j = 0; j < liDom.length; j++) {
+            listDom[j].addEventListener("click", function () {
+                console.log(j);
+                listDom[j].className = "active";
+            })
+        }
+     */
+
+</script>
