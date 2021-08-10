@@ -83,5 +83,28 @@
     }
     console.log(arr3.getIndexOf(4));
 
+    let arr4 = [1, 2, 3]
+    // 求和
+    Array.prototype.getSum = function () {
+        let sum = 0;
+        for (let i = 0; i < this.length; i++) {
+            sum += this[i]
+        }
+        return sum
+    }
+    console.log(arr4.getSum());
+
+
+    // let arr3 = [6, 1, 4, 2, 0, 5, 8, 7, 9]
+    // 翻转数组
+    Array.prototype.getReverse = function () {
+        let newArr = []
+        for (let i = this.length - 1; i >= 0; i--) {
+            newArr[newArr.length] = this[i]
+        }
+        return newArr
+    }
+    let arr5 = arr3.getReverse();
+    console.log(arr5);
 
 </script>
